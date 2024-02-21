@@ -61,7 +61,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`Maps/${selectedMap}.txt`)
+    fetch(`maps/${selectedMap}.txt`)
       .then((response) => response.text())
       .then((text) => {
         setMapContent(text);
@@ -325,6 +325,8 @@ function App() {
             <option value="map1">mapa1</option>
             <option value="map2">mapa2</option>
             <option value="map3">mapa3</option>
+            <option value="map4">mapa4</option>
+            <option value="map5">mapa5</option>
           </select>
         </div>
         <div className="dugme">
