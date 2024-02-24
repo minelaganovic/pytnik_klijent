@@ -2,7 +2,8 @@ import "./App.css";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { uniq } from "lodash";
-const url = `http://127.0.0.1:8000/game`;
+// const url = `http://127.0.0.1:8000/game`;
+const url = `https://pytnik-backend.vercel.app/`
 
 function App() {
   const [selectedAgent, setSelectedAgent] = useState("0");
@@ -325,6 +326,7 @@ function App() {
             <option value="map1">mapa1</option>
             <option value="map2">mapa2</option>
             <option value="map3">mapa3</option>
+            <option value="map4">mapa4</option>
           </select>
         </div>
         <div className="dugme">
