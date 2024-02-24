@@ -3,7 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { uniq } from "lodash";
 // const url = `http://127.0.0.1:8000/game`;
-const url = `https://pytnik-backend.vercel.app/`
+// const url = `https://pytnik-backend.vercel.app/`
+const url = `https://pytnik-backend.vercel.app/`;
 
 function App() {
   const [selectedAgent, setSelectedAgent] = useState("0");
