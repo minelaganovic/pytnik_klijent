@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3fdfda26.css",
+    "main.js": "/static/js/main.14c0ad4a.js",
+    "static/js/453.80e4efed.chunk.js": "/static/js/453.80e4efed.chunk.js",
+    "static/media/info_font.ttf": "/static/media/info_font.e007d854ddae24ec629f.ttf",
+    "static/media/game_font.ttf": "/static/media/game_font.2a2c41e6bca0465d8b75.ttf",
+    "static/media/coin_font.ttf": "/static/media/coin_font.f7e50430c867eb62c906.ttf",
+    "index.html": "/index.html",
+    "main.3fdfda26.css.map": "/static/css/main.3fdfda26.css.map",
+    "main.14c0ad4a.js.map": "/static/js/main.14c0ad4a.js.map",
+    "453.80e4efed.chunk.js.map": "/static/js/453.80e4efed.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3fdfda26.css",
+    "static/js/main.14c0ad4a.js"
+  ]
+}
