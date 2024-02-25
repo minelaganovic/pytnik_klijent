@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { uniq } from "lodash";
 const url = `http://127.0.0.1:8000/game`;
-// const url = `https://pytnik-backend.vercel.app/`
 
 function App() {
   const [selectedAgent, setSelectedAgent] = useState("0");
@@ -118,6 +117,13 @@ function App() {
     setIsGameOver(true);
     setIsGameInterrupted(false);
   };
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsClicked(!isClicked); // Obrni stanje kada se klikne dugme
+    handleSubmit(); // Pozovi handleSubmit funkciju kada se klikne dugme
+  };
+
 
   const handleSubmit = async () => {
     setOpisi([]);
@@ -291,8 +297,24 @@ function App() {
 
   return (
     <div className="App">
-      <h4 className="naziv"> PYTNIK: Izaberite agenta za skupljanje zlatnika i odaberite dugme "Igraj"</h4>
+      <h4 className="naziv"> PYTNIK: Izaberite agenta za skupljanje zlatnika i mapu zatim odaberite dugme "Igraj"</h4>
       <div className="agents">
+      <div className="dugme">
+      <button ref={buttonRef} onClick={handleSubmit}>
+  <p style={{ display: "inline-block", margin: 0 }}>Igraj</p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ verticalAlign: "middle" }}>
+    <path d="M8 5v14l11-7z" fill="#FFFFFF" />
+  </svg> 
+</button>
+      </div>
+      <div className="mapSelection">
+          <select onChange={handleMapChange}>
+            <option value="map1">mapa1</option>
+            <option value="map2">mapa2</option>
+            <option value="map3">mapa3</option>
+            <option value="map4">mapa4</option>
+          </select>
+        </div> 
         <div
           className={selectedAgent === "0" ? "selected-agent" : "agent"}
           onClick={() => changeAgent("0", "Aki.png")}
@@ -321,19 +343,6 @@ function App() {
           <img src="Micko.png" alt="" />
           <h3>Micko</h3>
         </div>
-        <div className="mapSelection">
-          <select onChange={handleMapChange}>
-            <option value="map1">mapa1</option>
-            <option value="map2">mapa2</option>
-            <option value="map3">mapa3</option>
-            <option value="map4">mapa4</option>
-          </select>
-        </div>
-        <div className="dugme">
-        <button ref={buttonRef} onClick={handleSubmit}>
-          Igraj
-        </button>
-      </div>
       </div>
       <div className="mapa">
         <div className="terrain">
@@ -381,7 +390,7 @@ function App() {
           {isGameOver && <p className="pauza">GAME OVER</p>}
         </div>
         <div className="data">
-          <h2>=====STEPS=====</h2>
+          <h2>=====Steps=====</h2>
           <div className="opisiPutanja">
             {uniq(opisi).map((opis, index) => (
               <div className="opis" key={index}>
